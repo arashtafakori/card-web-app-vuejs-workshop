@@ -27,7 +27,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" style="font-size: 14px">Booklet</h5>
+                    <h5 class="modal-title" style="font-size: 14px">{{ $t('Booklet') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                         @click="handleShowModelClose"></button>
                 </div>
@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <span style="font-size: 12px;">
-                                    Title: <span style="font-size: 15px;">
+                                    {{ $t('Title') }}: <span style="font-size: 15px;">
                                         {{ selectedBooklet.title }}</span>
                                 </span>
                             </div>
@@ -108,7 +108,8 @@ export default {
         async fetchData() {
             try {
                 // const url = `/v1.1/booklets?pageNumber=${params.pageNumber}&pageSize=${params.pageSize}&isDeleted=${params.isDeleted}&searchValue=${params.searchValue}`;
-                const baseUrl = 'https://localhost:7050';
+                const baseUrl = import.meta.env.VITE_APP_MEMORY_SERVICE_URL;
+                
                 const url = `/v1.1/booklets?pageNumber=1&pageSize=5&isDeleted=false&searchValue=`;
 
                 const response = await axios.get(baseUrl + url);

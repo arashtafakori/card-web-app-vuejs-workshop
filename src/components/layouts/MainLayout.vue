@@ -14,7 +14,7 @@
           </div>
           <div class="offcanvas-body">
             <div class="btn-group-vertical" style="width: 160px;" role="group" aria-label="Button group">
-              <button type="button" class="btn btn-light" @click="handleButtonClick">Booklet</button>
+              <button type="button" class="btn btn-light" @click="handleButtonClick">{{ $t('Booklet') }}</button>
             </div>
           </div>
         </div>

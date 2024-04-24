@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <span style="font-size: 12px;">
-                    Title: <span style="font-size: 15px;">
+                    {{ $t('Title') }}: <span style="font-size: 15px;">
                         {{ booklet.title }}</span>
                 </span>
             </div>
@@ -27,7 +27,7 @@ export default {
     methods: {
         async fetchData() {
             try {
-                const baseUrl = 'https://localhost:7050';
+                const baseUrl = import.meta.env.VITE_APP_MEMORY_SERVICE_URL;
                 const url = `/v1/booklets/${this.id}`;
 
                 const response = await axios.get(baseUrl + url);

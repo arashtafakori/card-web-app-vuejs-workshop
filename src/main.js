@@ -14,6 +14,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import BookletsListPage from './components/features/booklet/BookletsListPage.vue'
 import BookletDetailPage from './components/features/booklet/BookletDetailPage.vue'
 
+import i18n from './i18n'
+
 const routes = [
     { path: '/booklet', component: BookletsListPage },
     { path: '/booklet/:id', component: BookletDetailPage, props: true }
@@ -25,4 +27,4 @@ const router = new createRouter({
     routes: routes
 });
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(i18n).mount('#app')

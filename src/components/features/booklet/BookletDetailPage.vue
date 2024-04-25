@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { getBooklet } from '../../../services/booklet_api_service.js';
 
 export default {
     props: ['id'],
@@ -27,13 +27,9 @@ export default {
     methods: {
         async fetchData() {
             try {
-                const baseUrl = import.meta.env.VITE_APP_MEMORY_SERVICE_URL;
-                const url = `/v1/booklets/${this.id}`;
-
-                const response = await axios.get(baseUrl + url);
-                this.booklet = response.data;
+                this.booklet = await getBooklet(this.id);
             } catch (error) {
-                console.error('Error fetching booklets:', error);
+                console.error('Error fetching booklet:', error);
             }
         }
     }

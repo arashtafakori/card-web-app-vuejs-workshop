@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import {BOOKLETS_PATH} from '../../../route/paths.js'
+
 export default {
   props: {
     booklet: Object,
@@ -26,7 +28,7 @@ export default {
   },
   methods: {
     showDetail(id) {
-      this.$router.push({ path: `/booklet/${id}` });
+      this.$router.push({ path: `${BOOKLETS_PATH}/${id}` });
     },
     goToBookletDetail() {
       this.$emit('bookletDetailCallback', this.booklet);

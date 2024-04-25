@@ -76,7 +76,7 @@
   
 <script>
 import BookletItem from './BookletItem.vue';
-import axios from 'axios';
+import { getBooklets } from '../../../services/booklet_api_service.js';
 import { Modal } from 'bootstrap';
 
 export default {
@@ -107,15 +107,9 @@ export default {
         },
         async fetchData() {
             try {
-                // const url = `/v1.1/booklets?pageNumber=${params.pageNumber}&pageSize=${params.pageSize}&isDeleted=${params.isDeleted}&searchValue=${params.searchValue}`;
-                const baseUrl = import.meta.env.VITE_APP_MEMORY_SERVICE_URL;
-                
-                const url = `/v1.1/booklets?pageNumber=1&pageSize=5&isDeleted=false&searchValue=`;
-
-                const response = await axios.get(baseUrl + url);
-                this.booklets = Array.from(response.data.items);
+                this.booklets = await getBooklets();
             } catch (error) {
-                console.error('Error fetching booklets:', error);
+                console.error('Error fetching booklet:', error);
             }
         },
         bookletDetailHandler(payload) {

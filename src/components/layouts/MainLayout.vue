@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import {BOOKLETS_PATH} from '../../route/paths.js';
+
 export default {
   data() {
     return {
@@ -41,7 +43,7 @@ export default {
       this.show = false;
     },
     handleButtonClick() {
-      this.$router.push({ path: '/booklet' });
+      this.$router.push({ path: BOOKLETS_PATH });
       this.handleClose();
     }
   }

@@ -1,4 +1,7 @@
 {
     "Booklet" :"Booklet",
-    "Title" :"Title"
+    "Title" :"Title",
+    "Cancel" :"Cancel",
+    "Create" :"Create",
+    "Create new booklet" :"Create new booklet"
 }

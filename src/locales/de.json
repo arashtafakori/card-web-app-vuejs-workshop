@@ -1,4 +1,7 @@
 {
     "Booklet" :"Broschüre",
-    "Title" :"Titel"
+    "Title" :"Titel",
+    "Cancel" :"Abbrechen",
+    "Create" :"Erstellen",
+    "Create new booklet" :"Neues Broschüre erstellen"
 }

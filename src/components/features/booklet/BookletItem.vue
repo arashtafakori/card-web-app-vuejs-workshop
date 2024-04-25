@@ -24,7 +24,6 @@ export default {
     isLoading: Boolean
   },
   created() {
-
   },
   methods: {
     showDetail(id) {
